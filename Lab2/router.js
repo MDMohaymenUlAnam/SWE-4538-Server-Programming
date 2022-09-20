@@ -1,16 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.send("Home Page");
-});
+const { getCV } = require("./controllers/CvController");
 
-router.get("/about", (req, res) => {
-  res.send("About Page");
-});
+const fs = require("fs");
 
-router.get("/cv", (req, res) => {
-  res.sendFile(__dirname + "/public/cv.html");
-});
+router.get("/", getCV);
 
 module.exports = router;
