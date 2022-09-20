@@ -7,8 +7,11 @@ const getCV = (req, res) => {
 languages = fs.readFileSync("data/language", { encoding: "utf-8" });
 languages = JSON.parse(String(languages));
 
-skills = fs.readFileSync("data/skills", { encoding: "utf-8" });
+skills = fs.readFileSync("data/skill", { encoding: "utf-8" });
 skills = JSON.parse(String(skills));
+
+experience = fs.readFileSync("data/experience", { encoding: "utf-8" });
+experience = JSON.parse(String(experience));
 
   edus = [];
   
@@ -32,9 +35,13 @@ for (let key in skills) {
   skl.push(skills[key]);
 }
 
+ex = [];
+for (let key in experience) {
+  ex.push(experience[key]);
+}
 
 
-res.render("cv", { name:"Mohaymen UL Anam",educations:edus,languages:lang,skills:skl});
+res.render("cv", { name:"Mohaymen UL Anam",educations:edus,languages:lang,skills:skl,experience:ex});
 };
 
 
