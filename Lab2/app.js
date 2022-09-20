@@ -18,6 +18,7 @@ response to any HTTP method.
 // app.get("/", function (req, res) {
 //   res.send("Hello World!");
 // });
+//jj
 app.use(express.static("public"));
 
 app.set("view engine", "ejs"); // Setting EJS as template engine
